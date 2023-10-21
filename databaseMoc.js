@@ -5,7 +5,7 @@ export class dataBaseMoc {
 
     #videos = new Map()
     // Listar todos videos 
-    list() {
+    list(search) {
 
         return Array.from(this.#videos.entries()).map((videoArray) => {
             const id = videoArray[0]
