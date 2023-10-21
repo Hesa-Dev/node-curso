@@ -22,25 +22,43 @@ const server = fastify()
 const dataBase = new dataBaseMoc();
 
 
+server.post('/videos', (request , response)=>{
 
-server.get('/videos', (request , response)=>{
+    const {title , description , duration } = request.body
 
     dataBase.create({
 
-        title: "Video01",
-        description: "video 01 first",
-        duratio: 180
+        title:title,
+        description: description,
+        duratio: duration
     })
     console.log(dataBase.list())
     return response.status(201).send()
 })
 
-server.get('/hesasoft', ()=>{
-    return 'hello world hesasoft'
+server.get('/videos', ()=>{
+
+    const video =   dataBase.list()
+
+    // console.log(dataBase.list())
+
+    return video;
 })
 
-server.get('/node', ()=>{
-    return 'hello world node'
+server.put('/videos/:id', (request, response)=>{
+
+    const videoId = request.params.id
+    const {title , description , duration } = request.body
+
+    dataBase.update(videoId,{
+        title,
+        description,
+        duration
+    })
+
+    // status 204 -> resposta com sucesso mais sem contéudo de resposta 
+    return response.status(204).send();
+
 })
 
 server.listen({
