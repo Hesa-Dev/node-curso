@@ -36,9 +36,10 @@ server.post('/videos', (request , response)=>{
     return response.status(201).send()
 })
 
-server.get('/videos', ()=>{
+server.get('/videos', (request)=>{
 
-    const video =   dataBase.list()
+    // const search = request.query.search
+    const video =   dataBase.list(request.query.search)
 
     // console.log(dataBase.list())
 
@@ -59,6 +60,12 @@ server.put('/videos/:id', (request, response)=>{
     // status 204 -> resposta com sucesso mais sem contéudo de resposta 
     return response.status(204).send();
 
+})
+
+server.delete('/videos/:id' , (request , response) =>{
+
+    dataBase.delete(request.params.id)
+    return response.status(204).send();
 })
 
 server.listen({

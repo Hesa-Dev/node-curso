@@ -13,6 +13,9 @@ Accept-Language: pt
 
 
 GET   http://localhost:3333/videos
+
+
+
   
 
 ###
@@ -25,3 +28,7 @@ Accept-Language: pt
     "description": "Esse 2º video",
     "duration":200 
 }
+
+###
+
+DELETE http://localhost:3333/videos/09841104-91d2-4ed2-846e-43a176be481d
