@@ -20,13 +20,13 @@ GET   http://localhost:3333/videos
   
 
 ###
-PUT   http://localhost:3333/videos/95be2d21-400c-4c7e-bc8f-a2e288ae379d
+PUT   http://localhost:3333/videos/89e77325-9ec3-49fb-a809-23e2e26026ec
 Content-Type: application/json
 Accept-Language: pt
 
 {
-    "title" :"video put",
-    "description": "Esse 2º video",
+    "title" :"video 022",
+    "description": "update vid02",
     "duration":200 
 }
 
