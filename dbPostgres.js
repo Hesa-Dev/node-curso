@@ -37,8 +37,9 @@ export class dbPostgres {
     }
 
     //Deletar video 
-    delete(id) {
+    async delete(id) {
 
+        await mySql `delete from   videos  WHERE id=${id}`   
     }
 
     //  atualizar video 

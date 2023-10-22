@@ -63,14 +63,22 @@ server.put('/videos/:id', async (request, response)=>{
 
 })
 
-server.delete('/videos/:id' , (request , response) =>{
+server.delete('/videos/:id' , async(request , response) =>{
 
-    dataBase.delete(request.params.id)
+   await  dataBase.delete(request.params.id)
     return response.status(204).send();
 })
 
+//  Rodar servidor localmente
+// server.listen({
+//     port:3333,
+// })
+
+// Fazendo deploy da aplicação | rodar app remotamente 
+
 server.listen({
-    port:3333,
+    host: '0.0.0.0',
+    port:process.env.PORT ?? 3333
 })
 
 

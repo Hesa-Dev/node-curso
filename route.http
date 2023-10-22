@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
    "title" :"video 02",
-   "description": "Esse 2º video",
+   "description": "video nº 2",
    "duration": 190
 }
 
@@ -32,4 +32,4 @@ Accept-Language: pt
 
 ###
 
-DELETE http://localhost:3333/videos/09841104-91d2-4ed2-846e-43a176be481d
+DELETE http://localhost:3333/videos/89e77325-9ec3-49fb-a809-23e2e26026ec
