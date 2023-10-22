@@ -47,12 +47,12 @@ server.get('/videos', async(request)=>{
     return video;
 })
 
-server.put('/videos/:id', (request, response)=>{
+server.put('/videos/:id', async (request, response)=>{
 
     const videoId = request.params.id
     const {title , description , duration } = request.body
 
-    dataBase.update(videoId,{
+   await dataBase.update(videoId,{
         title,
         description,
         duration

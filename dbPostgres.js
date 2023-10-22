@@ -42,8 +42,11 @@ export class dbPostgres {
     }
 
     //  atualizar video 
-    update(id, video) {
+   async update(id, video) {
 
+        const {title, description , duration } = video 
+        await mySql `update set  title = ${title}, description = ${description}, 
+              duration = ${duration} WHERE id=${id} `
     }
 
 }
