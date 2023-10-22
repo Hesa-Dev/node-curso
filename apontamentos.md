@@ -33,6 +33,20 @@ dentro do arquivo inserir a seguinte linha de código
 
  3º criação do ficheiro .env Com a váriaveis de ambiente copiado apartir da nossa [https://console.neon.tech/app/projects/super-union-79012023]  | para isso foi necessário a instalação do pacote dotenv | #npm i dotenv -D 
 
+ Fazendo Deploy/Implatação da APP uSANDO RENDER 
 
+
+
+
+/*import {createServer} from 'node:http'
+
+const server = createServer ((request , response) =>{
+
+    // console.log("hello node ")
+    response.write("helo node estou aqui no browser  ")
+    return response.end();
+})
+
+server.listen(3333)*/
 
 
