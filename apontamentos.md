@@ -35,6 +35,14 @@ dentro do arquivo inserir a seguinte linha de código
 
  Fazendo Deploy/Implatação da APP uSANDO RENDER 
 
+ 1º criar conta usando credencias github
+ 2º importar repositorio
+ 3º config variaveis de ambientes 
+
+ How do I resolve "Cannot find module" node:http?
+ https://community.render.com/t/error-cannot-find-module/6781
+
+
 
 
 
