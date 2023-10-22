@@ -1,10 +1,13 @@
 import mySql from './db.js'
 
+// mySql `DROP TABLE IF EXISTS videos;`.then(()=>{
+//     console.log('Tabela apagada !')
+// })
 
 mySql `
 CREATE TABLE videos (
-    id serial PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
+    id    TEXT PRIMARY KEY,
+    title TEXT,
     description TEXT,
     duration INTEGER
 );

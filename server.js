@@ -16,33 +16,34 @@ server.listen(3333)*/
 
 import {fastify} from 'fastify'
 
-import { dataBaseMoc } from './databaseMoc.js'
+// import { dataBaseMoc } from './databaseMoc.js'
+import {dbPostgres} from './dbPostgres.js'
 
 const server = fastify()
-const dataBase = new dataBaseMoc();
+
+const dataBase = new dbPostgres();
 
 
-server.post('/videos', (request , response)=>{
+server.post('/videos', async (request , response)=>{
 
     const {title , description , duration } = request.body
 
-    dataBase.create({
+   await  dataBase.create({
 
         title:title,
         description: description,
-        duratio: duration
+        duration: duration
     })
+
     console.log(dataBase.list())
     return response.status(201).send()
 })
 
-server.get('/videos', (request)=>{
+server.get('/videos', async(request)=>{
 
     // const search = request.query.search
-    const video =   dataBase.list(request.query.search)
-
+    const video =  await dataBase.list(request.query.search)
     // console.log(dataBase.list())
-
     return video;
 })
 

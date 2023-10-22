@@ -1,21 +1,18 @@
 POST  http://localhost:3333/videos
 Content-Type: application/json
-Accept-Language: pt
+# Accept-Language: pt
 
 {
-    "title" :"video hesasoft",
-    "description": "Esse 1º video",
-    "duration": 180
+   "title" :"video 02",
+   "description": "Esse 2º video",
+   "duration": 190
 }
 
 
 ###
 
 
-GET   http://localhost:3333/videos
-
-
-
+GET   http://localhost:3333/videos?search=02
   
 
 ###
